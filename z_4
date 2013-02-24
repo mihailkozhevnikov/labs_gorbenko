@@ -3,7 +3,7 @@
 using namespace std;
 void main()
 {
-  int n;
+	int n;
 	cout<<"vvedite n"<<endl;
 	cin>>n;
 	double *a = new double[n];
@@ -18,7 +18,7 @@ void main()
 		{
 			k+=1;
 			int t= a[i];
-			for (int j=k+1;j<=i;j++)
+			for (int j=i;j>k;j--)
 			{
 				a[j]=a[j-1];
 			}
