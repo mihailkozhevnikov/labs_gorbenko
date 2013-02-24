@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+struct simvol
+{
+  char sim;
+	int kol;
+};
+
+void main()
+{
+	int n;
+	cout<<"vvedite n"<<endl;
+	cin>>n;
+simvol *a= new simvol[n];
+for (int i=0;i<=n;i++)
+{
+	a[i].kol=0;
+	cin>> a[i].sim;
+	a[i].kol+=1;
+	for (int j=0; j<i; j++)
+		if (a[i].sim==a[j].sim)
+		{
+			a[j].kol+=1;	
+			break;
+		}
+		
+}
+int max=0;int max_i=-1;
+for(int i=0;i<=n;i++)
+{
+	cout<<a[i].kol<<" ";
+	if (a[i].kol>max) 
+	{
+		max=a[i].kol;
+		max_i=i;
+	}
+}
+	cout<<"naibolee vstrechayoushijsia - "<<a[max_i].sim<<" vstretilsia "<<a[max_i].kol<<" raz"<<endl;
+system("pause");
+}
